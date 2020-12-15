@@ -2,17 +2,22 @@ package strategy;
 
 public class Client {
   public static void main(String[] args) {
-    Robot atom = new Atom("atomv1");
-    Robot taekwonV = new TaekwonV("taekwonVv1");
+    Robot atom = new Atom("atom");
+    atom.setAttackBehavior(new PunchBehavior());
+    atom.setMoveBehavior(new FlyingBehavior());
+
+    Robot taekwonV = new TaekwonV("taekwonV");
+    taekwonV.setAttackBehavior(new MissileBehavior());
+    taekwonV.setMoveBehavior(new WalkingBehavior());
 
     System.out.println("My name is " + atom.getName());
-    atom.move();
-    atom.attack();
+    atom.performMove();
+    atom.performAttack();
 
     System.out.println();
 
     System.out.println("My name is " + taekwonV.getName());
-    taekwonV.move();
-    taekwonV.attack();
+    taekwonV.performMove();
+    taekwonV.performAttack();
   }
 }
