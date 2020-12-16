@@ -2,10 +2,19 @@ package state;
 
 public class Off implements LightState {
 
+  private static final Off off = new Off();
+
+  private Off() {
+  }
+
+  public static Off getInstance() {
+    return off;
+  }
+
   @Override
   public void turnOn(Light light) {
     System.out.println("Light on!");
-    light.setLightState(new On());
+    light.setLightState(On.getInstance());
   }
 
   @Override

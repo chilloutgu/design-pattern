@@ -4,7 +4,7 @@ public class Light {
   private LightState currentState;
 
   public Light() {
-    this.currentState = new Off();
+    this.currentState = Off.getInstance();
   }
 
   public void setLightState(LightState newState) {
