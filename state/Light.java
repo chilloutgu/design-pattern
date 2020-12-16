@@ -11,7 +11,7 @@ public class Light {
     this.currentState = OFF;
   }
 
-  public void on() {
+  public void turnOn() {
     if (this.currentState == OFF) {
       System.out.println("Light on!");
       this.currentState = ON;
@@ -24,7 +24,7 @@ public class Light {
     }
   }
 
-  public void off() {
+  public void turnOff() {
     if (this.currentState == ON) {
       System.out.println("Light off!");
       this.currentState = OFF;
